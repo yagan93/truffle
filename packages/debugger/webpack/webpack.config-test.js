@@ -11,14 +11,21 @@ module.exports = merge(commonConfig, {
       {
         test: /\.(js)/,
         include: path.resolve("lib"),
-        loader: "istanbul-instrumenter-loader"
+        loader: "istanbul-instrumenter-loader",
+        options: {
+          esModules: true
+        }
       },
       {
         test: /\.js$/,
         loader: "babel-loader",
         query: {
           presets: [["babel-preset-env", { targets: { node: "6.14" } }]],
-          plugins: ["transform-object-rest-spread", "transform-runtime"]
+          plugins: [
+            "@babel/plugin-proposal-object-rest-spread",
+            "@babel/plugin-transform-runtime"
+          ],
+          sourceType: "module"
         },
         include: [
           path.resolve(__dirname, "..", "lib"),

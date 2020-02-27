@@ -11,7 +11,11 @@ module.exports = {
         loader: "babel-loader",
         query: {
           presets: [["babel-preset-env", { targets: { node: "6.14" } }]],
-          plugins: ["transform-object-rest-spread", "transform-runtime"]
+          plugins: [
+            "@babel/plugin-proposal-object-rest-spread",
+            "@babel/plugin-transform-runtime"
+          ],
+          sourceType: "module"
         },
         include: [path.resolve(__dirname, "..", "lib")]
       }
@@ -19,6 +23,8 @@ module.exports = {
   },
 
   target: "node",
+
+  mode: "production",
 
   output: {
     library: "Debugger",
