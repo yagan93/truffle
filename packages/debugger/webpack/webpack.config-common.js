@@ -38,10 +38,6 @@ module.exports = {
   },
 
   resolve: {
-    alias: {
-      lib: path.resolve(__dirname, "../lib"),
-      test: path.resolve(__dirname, "../test")
-    },
     modules: [path.resolve(__dirname, ".."), "node_modules"]
   },
 
