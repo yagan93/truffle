@@ -20,6 +20,7 @@
     "test:debug": "NODE_ENV=testing node --inspect ./node_modules/.bin/mocha-webpack --webpack-config webpack/webpack.config-test.js --recursive"
   },
   "dependencies": {
+    "@babel/plugin-proposal-object-rest-spread": "^7.9.6",
     "@babel/register": "^7.8.6",
     "@truffle/codec": "^0.5.2",
     "@truffle/compile-solidity": "^4.3.4",
