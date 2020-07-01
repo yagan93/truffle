@@ -1,4 +1,5 @@
-const ReplManager = require("./repl");
+// const ReplManager = require("./repl");
+const childRepl = require("./childRepl");
 const Command = require("./command");
 const provision = require("@truffle/provisioner");
 const {
@@ -43,7 +44,8 @@ class Console extends EventEmitter {
 
     this.options = options;
 
-    this.repl = options.repl || new ReplManager(options);
+    this.repl = options.repl || childRepl.send(options);
+    console.debug("hello! " + this.repl);
     this.command = new Command(tasks);
 
     this.interfaceAdapter = createInterfaceAdapter({
@@ -63,7 +65,7 @@ class Console extends EventEmitter {
   }
 
   start(callback) {
-    if (!this.repl) this.repl = new Repl(this.options);
+    if (!this.repl) this.repl = childRepl.send(this.options);
 
     // TODO: This should probalby be elsewhere.
     // It's here to ensure the repl manager instance gets

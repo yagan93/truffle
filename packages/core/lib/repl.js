@@ -19,16 +19,16 @@ function ReplManager(options) {
     "resolver",
     "build_directory"
   ]);
-
+  console.debug("HELLO!");
   this.options = options;
   this.repl = options.repl;
-
+  console.debug("HELLO2!");
   this.contexts = [];
 }
 
 ReplManager.prototype.start = function(options) {
   var self = this;
-
+  console.debug("in start!");
   this.contexts.push({
     prompt: options.prompt,
     interpreter: options.interpreter,
@@ -55,6 +55,7 @@ ReplManager.prototype.start = function(options) {
       } catch (error) {
         throw error;
       } finally {
+        console.log("reached here?");
         process.exit();
       }
     });
