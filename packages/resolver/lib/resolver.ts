@@ -62,7 +62,7 @@ export class Resolver {
     return {
       body,
       filePath,
-      source
+      source,
     };
   }
 }
