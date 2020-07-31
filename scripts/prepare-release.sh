@@ -16,4 +16,4 @@ yarn bootstrap
 
 ## Get output of changes for release notes
 prs-merged-since --repo trufflesuite/truffle --tag v$LAST_PUBLISHED_TAG --format markdown
-lerna changed
+npx lerna changed

@@ -12,8 +12,8 @@ fi
 node ./scripts/npm-access.js
 
 ## Publish packages to npm
-lerna version
-lerna publish from-package 
+npx lerna version
+npx lerna publish from-package
 
 ## Update git branches
 git checkout master

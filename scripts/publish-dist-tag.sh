@@ -30,12 +30,12 @@ fi
 node ./scripts/npm-access.js
 
 ## Bump package versions and commit
-lerna version --no-git-tag-version --preid $distTag $lernaVersionCommand
+npx lerna version --no-git-tag-version --preid $distTag $lernaVersionCommand
 git add packages/*/package.json
 git commit -m "Publish truffle@${distTag}"
 
 ## Publish packages to npm
-lerna publish from-package --dist-tag ${distTag}
+npx lerna publish from-package --dist-tag ${distTag}
 
 ## Update git branch
 git push origin $currentGitBranch
