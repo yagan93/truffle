@@ -1,0 +1,28 @@
+{
+  "name": "@truffle/contract-new",
+  "description": "A better contract abstraction",
+  "license": "MIT",
+  "author": "Truffle",
+  "homepage": "https://github.com/trufflesuite/truffle/tree/master/packages/contract-new#readme",
+  "repository": "https://github.com/trufflesuite/truffle/tree/master/packages/contract-new",
+  "bugs": {
+    "url": "https://github.com/trufflesuite/truffle/issues"
+  },
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "prepare": "yarn build",
+    "test": "yarn build && mocha --exit -r ts-node/register test/**/*.test.ts"
+  },
+  "types": "dist/index.d.ts",
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "8.1.2",
+    "ts-node": "8.10.2",
+    "typescript": "3.9.6"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
