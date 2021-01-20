@@ -14,9 +14,5 @@ jobs:
       - run: yarn ci
 workflows:
   test-project:
-    filters:
-      branches:
-        only:
-          - develop
     jobs:
       - build-and-test
