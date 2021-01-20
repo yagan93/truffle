@@ -2,7 +2,7 @@ version: 2.1
 orbs:
   node: circleci/node@2.1.1
 jobs:
-  build-and-test-COLONY:
+  build-and-test:
     executor:
       name: node/default
       tag: '10.20'
@@ -12,12 +12,11 @@ jobs:
       - run: yarn bootstrap
       - run: npx truffle obtain --solc=0.5.16
       - run: yarn ci
-
 workflows:
-  colony:
+  test-project:
+    filters:
+      branches:
+        only:
+          - develop
     jobs:
-      - build-and-test-COLONY:
-          filters:
-            branches:
-              only:
-                - develop
+      - build-and-test
