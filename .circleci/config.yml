@@ -11,7 +11,7 @@ jobs:
       - setup_remote_docker
       - run: yarn bootstrap
       - run: npx truffle obtain --solc=0.5.16
-      - run: PACKAGES=true yarn ci
+      - run: INTEGRATION=true yarn ci
 workflows:
   test-project:
     jobs:
