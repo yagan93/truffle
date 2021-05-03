@@ -21,6 +21,8 @@ Truffle is a development environment, testing framework and asset pipeline for E
 * Instant rebuilding of assets during development.
 * External script runner that executes scripts within a Truffle environment.
 
+* Things to look at: Truffle, Ganache, Solidity
+
 | ℹ️ **Contributors**: Please see the [Development](#development) section of this README. |
 | --- |
 
